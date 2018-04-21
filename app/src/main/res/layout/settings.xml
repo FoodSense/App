@@ -14,11 +14,13 @@
         android:layout_marginEnd="40dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="5dp"
+        android:checked="true"
         android:text="List Notifications"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/power_sw" />
+        app:layout_constraintTop_toBottomOf="@+id/power_sw"
+        tools:checked="true" />
 
     <Switch
         android:id="@+id/door_sw"
@@ -28,11 +30,13 @@
         android:layout_marginEnd="40dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
+        android:checked="true"
         android:text="Door Notifications"
         app:layout_constraintBottom_toTopOf="@+id/temp_sw"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:checked="true" />
 
     <Switch
         android:id="@+id/temp_sw"
@@ -42,11 +46,13 @@
         android:layout_marginEnd="40dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="5dp"
+        android:checked="true"
         android:text="Temperature Notifications"
         app:layout_constraintBottom_toTopOf="@+id/power_sw"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/door_sw" />
+        app:layout_constraintTop_toBottomOf="@+id/door_sw"
+        tools:checked="true" />
 
     <Switch
         android:id="@+id/power_sw"
@@ -56,9 +62,11 @@
         android:layout_marginEnd="40dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="5dp"
+        android:checked="true"
         android:text="Power Notifications"
         app:layout_constraintBottom_toTopOf="@+id/list_sw"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temp_sw" />
+        app:layout_constraintTop_toBottomOf="@+id/temp_sw"
+        tools:checked="true" />
 </android.support.constraint.ConstraintLayout>

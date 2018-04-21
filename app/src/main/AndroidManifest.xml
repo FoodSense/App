@@ -20,6 +20,7 @@
         <activity android:name=".post_log_in"></activity>
         <activity android:name=".postregisterActivity"></activity>
         <activity android:name=".settings_activity"></activity>
+        <activity android:name=".accessability_activity"></activity>
 
 
 

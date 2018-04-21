@@ -55,6 +55,7 @@ public class settings_activity extends  AppCompatActivity {
 
         setContentView(R.layout.settings);
 
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // Create channel to show notifications.
             String channelId  = "123";
@@ -85,6 +86,9 @@ public class settings_activity extends  AppCompatActivity {
         Switch tempSW = (Switch) findViewById(R.id.temp_sw);
         Switch powerSW = (Switch) findViewById(R.id.power_sw);
         Switch listSW = (Switch) findViewById(R.id.list_sw);
+
+
+
 
         doorSW.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 

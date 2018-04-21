@@ -31,7 +31,7 @@ public class UsrListAdapter extends RecyclerView.Adapter<UsrListAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         holder.usrName.setText(usrList.get(position).getusrName());
-        holder.usrAcc.setChecked(usrList.get(position).getusrAcc());
+       // holder.usrAcc.setChecked(usrList.get(position).getusrAcc());
 
     }
 
