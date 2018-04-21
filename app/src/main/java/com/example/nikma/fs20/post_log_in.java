@@ -114,7 +114,7 @@ public class post_log_in  extends AppCompatActivity{
                         obj.setObjWeight(weight);
 
                         objList.add(obj);
-                       // objListAdapter.notifyDataSetChanged();
+                        objListAdapter.notifyDataSetChanged();
                         Log.d(TAG, "Name : " + obj.getObjName());
                         Log.d(TAG, "DTS : " + obj.getObjDTS());
                         Log.d(TAG, "weight : " + obj.getObjWeight());
@@ -135,7 +135,7 @@ public class post_log_in  extends AppCompatActivity{
                         startActivity(getIntent());
                     }
                 }
-                //objListAdapter.notifyDataSetChanged();
+
 
             }
         });

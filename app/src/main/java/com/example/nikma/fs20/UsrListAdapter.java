@@ -17,7 +17,7 @@ public class UsrListAdapter extends RecyclerView.Adapter<UsrListAdapter.ViewHold
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view   = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_view_layout,parent,false);
+        View view   = LayoutInflater.from(parent.getContext()).inflate(R.layout.accessability_layout,parent,false);
         return new ViewHolder(view);
     }
 
@@ -30,8 +30,17 @@ public class UsrListAdapter extends RecyclerView.Adapter<UsrListAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.usrName.setText(usrList.get(position).getusrName());
-       // holder.usrAcc.setChecked(usrList.get(position).getusrAcc());
+        holder.usrName.setText("test");
+        holder.usrAcc.setChecked(true);
+        /*
+            Not sure if this is right or not
+
+        if(usrList.get(position).getusrAcc()) {
+            holder.usrAcc.setChecked(true);
+        }
+        else{
+            holder.usrAcc.setChecked(false);
+        }*/
 
     }
 

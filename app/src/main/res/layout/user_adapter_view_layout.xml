@@ -35,7 +35,8 @@
                 android:layout_height="60dp"
                 android:checked="false"
                 android:gravity="center"
-                android:text="Registered User" />
+                android:text="Registered User"
+                tools:checked="false" />
 
         </LinearLayout>
 

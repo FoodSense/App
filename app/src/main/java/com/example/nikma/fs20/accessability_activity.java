@@ -90,10 +90,14 @@ public class accessability_activity  extends  AppCompatActivity{
                     {
                         Toast.makeText(accessability_activity.this, "Access False", Toast.LENGTH_SHORT).show();
                     }
-                  //  Toast.makeText(accessability_activity.this, obj.getusrName().toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(accessability_activity.this, obj.getusrName().toString(), Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, "Name: " +obj.getusrName());
+                    Log.d(TAG, "Access: " +obj.getusrAcc());
+                    usrListAdapter.notifyDataSetChanged();
 
-                    //usrListAdapter.notifyDataSetChanged();
                 }
+
+               Log.d(TAG,"Number of users : " +usrListAdapter.getItemCount());
             }
         });
 
