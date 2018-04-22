@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">FS2.0</string>
+    <string name="msg_subscribed">Subscribed to list, door, temp, and power topics</string>
+    <string name="default_notification_channel_id" translatable="false">Food Sense Notifications</string>
+    <string name="default_notification_channel_name" translatable="true">Food Sense Notifications</string>
+    <string name="title_activity_fullscreen">Last Captured Image</string>
+    <string name="back">Back</string>
+    <string name="log_out">Log Out</string>
+    <string name="accessibility">Accessibility</string>
+    <string name="settings">Settings</string>
+    <string name="view_image">View Image</string>
 </resources>

@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentChange;
@@ -30,6 +31,9 @@ import java.util.List;
 import java.util.Map;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 import android.os.Build;
 import android.os.Bundle;
 import android.app.NotificationManager;
@@ -95,6 +99,7 @@ public class post_log_in  extends AppCompatActivity{
         Button btnNavToLogIn = (Button) findViewById(R.id.log_out_btn);
         Button btnNavToSetting = (Button) findViewById(R.id.settingbtn);
         Button btnNavToAccess = (Button) findViewById(R.id.accessbtn);
+        Button btnNavToImage = (Button) findViewById(R.id.viewImageButton);
 
          mFirestore.collection("list").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
@@ -160,6 +165,34 @@ public class post_log_in  extends AppCompatActivity{
             public void onClick(View v) {
                 Intent intent = new Intent(post_log_in.this,accessability_activity.class);
                 startActivity(intent);
+            }
+        });
+
+        // Get image button
+        btnNavToImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseStorage storage = FirebaseStorage.getInstance();
+                StorageReference storageRef = storage.getReferenceFromUrl("gs://avian-silicon-200216.appspot.com").child("content.jpg");
+
+                final long ONE_MEGABYTE = 1024 * 1024;
+                storageRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                    @Override
+                    public void onSuccess(byte[] bytes) {
+                        Log.d(TAG, "Image downloaded successfully");
+
+                        Bundle bundle = new Bundle();
+                        bundle.putByteArray("bytes", bytes);
+                        Intent intent = new Intent(post_log_in.this, FullscreenActivity.class);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        Log.d(TAG, "Error: image not downloaded");
+                    }
+                });
             }
         });
 
