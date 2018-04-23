@@ -98,6 +98,8 @@ public class accessability_activity  extends  AppCompatActivity{
                 }
 
                Log.d(TAG,"Number of users : " +usrListAdapter.getItemCount());
+               Log.d(TAG,"User 1 name from list adapter : " +usrListAdapter.usrList.get(0).getusrName());
+               Log.d(TAG,"User 1 access from list adapter : " +usrListAdapter.usrList.get(0).getusrAcc());
             }
         });
 

@@ -59,8 +59,8 @@ public class UsrListAdapter extends RecyclerView.Adapter<UsrListAdapter.ViewHold
             super(itemView);
             mView = itemView;
 
-            usrName = (TextView) mView.findViewById(R.id.usrNameView);
-            usrAcc = (Switch) mView.findViewById(R.id.register_user);
+          //  usrName = (TextView) mView.findViewById(R.id.usrNameView);
+           // usrAcc = (Switch) mView.findViewById(R.id.register_user);
 
         }
     }

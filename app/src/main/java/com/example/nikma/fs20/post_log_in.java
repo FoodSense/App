@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -60,6 +62,7 @@ public class post_log_in  extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.post_log_in_screen);
 
+
         objList = new ArrayList<>();
         objListAdapter = new ObjListAdapter(objList);
 
@@ -101,7 +104,10 @@ public class post_log_in  extends AppCompatActivity{
         Button btnNavToAccess = (Button) findViewById(R.id.accessbtn);
         Button btnNavToImage = (Button) findViewById(R.id.viewImageButton);
 
-         mFirestore.collection("list").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        mAuth.signInAnonymously();
+
+        mFirestore.collection("list").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e) {
                 if (e != null) {
@@ -172,8 +178,9 @@ public class post_log_in  extends AppCompatActivity{
         btnNavToImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 FirebaseStorage storage = FirebaseStorage.getInstance();
-                StorageReference storageRef = storage.getReferenceFromUrl("gs://avian-silicon-200216.appspot.com").child("content.jpg");
+                StorageReference storageRef = storage.getReferenceFromUrl("gs://food-sense-199718.appspot.com").child("contents.jpg");
 
                 final long ONE_MEGABYTE = 1024 * 1024;
                 storageRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {

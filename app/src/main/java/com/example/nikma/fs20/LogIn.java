@@ -109,14 +109,14 @@ public class LogIn extends AppCompatActivity {
                 final TextView uID = (TextView) findViewById(R.id.user);
                 final TextView uPass = (TextView) findViewById(R.id.pass);
                 //  final boolean passGood = false;
-                final   TextView error = (TextView) findViewById(R.id.error);
+//                final   TextView error = (TextView) findViewById(R.id.);
 
                 final String userID = uID.getText().toString();
                 final String userPass = uPass.getText().toString();
                 if(userID.length() < 1 || userPass.length() < 1){
 
-                    error.setText("Please enter in both User Name and Password");
-                    error.setVisibility(View.VISIBLE);
+//                    error.setText("Please enter in both User Name and Password");
+//                    error.setVisibility(View.VISIBLE);
                 }
                 else {
                     DocumentReference docRef = mFirestore.collection("users").document(userID);
@@ -130,12 +130,12 @@ public class LogIn extends AppCompatActivity {
                                 Boolean fsAccess = document.getBoolean("access");
                                 if (document != null && document.exists()) {
                                     if (fsPass.contentEquals(userPass) && fsUserID.contentEquals(userID) && fsAccess) {
-                                        error.setVisibility(View.INVISIBLE);
+//                                        error.setVisibility(View.INVISIBLE);
                                         Intent intent = new Intent(LogIn.this, post_log_in.class);
                                         startActivity(intent);
                                     }
                                 } else {
-                                    error.setText("Invalid Password or Username");
+   //                                 error.setText("Invalid Password or Username");
                                     Log.d(TAG, "No such document");
                                 }
                             } else {
@@ -195,14 +195,14 @@ public class LogIn extends AppCompatActivity {
             public void onClick(View v) {
                 final TextView uID = (TextView) findViewById(R.id.user);
                 final TextView uPass = (TextView) findViewById(R.id.pass);
-                final   TextView error = (TextView) findViewById(R.id.error);
+//                final   TextView error = (TextView) findViewById(R.id.error);
 
                 final String userID = uID.getText().toString();
                 final String userPass = uPass.getText().toString();
                 if(userID.length() < 1 || userPass.length() < 1){
 
-                    error.setText("Please enter in both User Name and Password");
-                    error.setVisibility(View.VISIBLE);
+  //                  error.setText("Please enter in both User Name and Password");
+   //                 error.setVisibility(View.VISIBLE);
                 }
                 else {
                     final DocumentReference  docref2= mFirestore.collection("users").document();
@@ -231,18 +231,18 @@ public class LogIn extends AppCompatActivity {
                                                     Log.w(TAG, "Error writing document", e);
                                                 }
                                             });
-                                    error.setVisibility(View.INVISIBLE);
+//                                    error.setVisibility(View.INVISIBLE);
                                     Intent intent = new Intent(LogIn.this, postregisterActivity.class);
                                     startActivity(intent);
                                 }
                                 else{
                                     boolean usrAccess = document.getBoolean("access");
                                     if (usrAccess){
-                                    error.setText("User is already in the system");
+                          //          error.setText("User is already in the system");
                                     Log.d(TAG, "No such document");
                                     }
                                     else{
-                                        error.setText("User is awaiting approval");
+                            //            error.setText("User is awaiting approval");
                                     }
 
                                 }
